@@ -14,7 +14,7 @@ const experiences = [
     location: "Surat, India",
     duration: "May 2024 – Jun 2024",
     description: "Developed and deployed production-ready ML models for diamond quality assessment. Achieved 95% accuracy in facet classification using computer vision techniques.",
-    technologies: ["Python", "TensorFlow", "OpenCV", "MLOps"],
+    technologies: ["Python", "TensorFlow", "OpenCV"],
     icon: "Brain"
   },
   {
@@ -23,7 +23,7 @@ const experiences = [
     location: "Surat, India",
     duration: "May 2023 – Jun 2023",
     description: "Built responsive web applications using modern JavaScript frameworks. Improved user experience metrics by 60% through UI/UX optimization.",
-    technologies: ["JavaScript", "React", "Node.js", "MongoDB"],
+    technologies: ["JavaScript", "React", "MongoDB"],
     icon: "Globe"
   }
 ];
