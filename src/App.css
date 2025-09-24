@@ -38,6 +38,13 @@
   --text-secondary: #cbd5e1;
   --text-muted: #64748b;
   --border: #334155;
+  --surface-overlay: rgba(15, 23, 42, 0.65);
+  --surface-overlay-weak: rgba(15, 23, 42, 0.55);
+  --text-shadow-strong: 0 2px 10px rgba(0, 0, 0, 0.35);
+  /* Vibrant, modern gradients for dark theme */
+  --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+  --gradient-secondary: linear-gradient(135deg, #f472b6 0%, #22d3ee 100%);
+  --gradient-accent: linear-gradient(135deg, #60a5fa 0%, #22d3ee 100%);
 }
 
 [data-theme="light"] {
@@ -48,6 +55,9 @@
   --text-secondary: #334155;
   --text-muted: #64748b;
   --border: #e2e8f0;
+  --surface-overlay: rgba(255, 255, 255, 0.86);
+  --surface-overlay-weak: rgba(255, 255, 255, 0.7);
+  --text-shadow-strong: 0 2px 10px rgba(0, 0, 0, 0.18);
 }
 
 html {
@@ -59,8 +69,29 @@ body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
   color: var(--text-primary);
-  background: var(--bg-primary);
+  background-color: var(--bg-primary);
   overflow-x: hidden;
+}
+
+/* Light theme: show background image across entire page */
+[data-theme="light"] body {
+  background-image: url('./assets/images/Background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Dark theme: remove image, keep solid background */
+[data-theme="dark"] body {
+  /* Use same image but tint it for dark readability */
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)),
+    url('./assets/images/Background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* ===== PERFECT HEADER ===== */
@@ -217,21 +248,19 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(120%) blur(2px);
   position: relative;
   overflow: hidden;
   padding-top: 80px;
 }
 
+[data-theme="dark"] .hero {
+  background: rgba(15, 23, 42, 0.75);
+}
+
 .hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e2e8f0" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-  opacity: 0.1;
+  content: none;
 }
 
 .hero-content {
@@ -260,6 +289,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: var(--text-shadow-strong);
 }
 
 .hero-subtitle {
@@ -267,6 +297,7 @@ body {
   color: var(--text-secondary);
   margin-bottom: 1rem;
   font-weight: 500;
+  text-shadow: var(--text-shadow-strong);
 }
 
 .hero-description {
@@ -274,6 +305,7 @@ body {
   color: var(--text-muted);
   margin-bottom: 2rem;
   line-height: 1.7;
+  text-shadow: var(--text-shadow-strong);
 }
 
 .hero-info {
@@ -455,6 +487,7 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   position: relative;
+  text-shadow: var(--text-shadow-strong);
 }
 
 .section-title::after {
@@ -478,7 +511,8 @@ body {
 
 /* ===== PERFECT ABOUT SECTION ===== */
 .about-section {
-  background: var(--bg-secondary);
+  background: var(--surface-overlay);
+  backdrop-filter: saturate(120%) blur(2px);
 }
 
 .about-content {
@@ -645,7 +679,8 @@ body {
 
 /* ===== PERFECT EXPERIENCE SECTION ===== */
 .experience-section {
-  background: var(--bg-primary);
+  background: var(--surface-overlay);
+  backdrop-filter: saturate(120%) blur(2px);
 }
 
 .experience-timeline {
@@ -789,7 +824,8 @@ body {
 
 /* ===== PERFECT PROJECTS SECTION ===== */
 .projects-section {
-  background: var(--bg-secondary);
+  background: var(--surface-overlay);
+  backdrop-filter: saturate(120%) blur(2px);
 }
 
 .projects-grid {
@@ -967,7 +1003,8 @@ body {
 
 /* ===== PERFECT SKILLS SECTION ===== */
 .skills-section {
-  background: var(--bg-primary);
+  background: var(--surface-overlay);
+  backdrop-filter: saturate(120%) blur(2px);
   text-align: center;
 }
 
@@ -1060,7 +1097,8 @@ body {
 
 /* ===== PERFECT CONTACT SECTION ===== */
 .contact-section {
-  background: var(--bg-secondary);
+  background: var(--surface-overlay);
+  backdrop-filter: saturate(120%) blur(2px);
 }
 
 .contact-content {
@@ -1267,7 +1305,8 @@ body {
 
 /* ===== PERFECT FOOTER ===== */
 .footer {
-  background: var(--bg-primary);
+  background: var(--surface-overlay-weak);
+  backdrop-filter: saturate(120%) blur(2px);
   border-top: 1px solid var(--border);
   padding: 2rem 0;
 }
@@ -1629,17 +1668,9 @@ body {
   }
 }
 
-/* ===== Technical Data-Analyst Background ===== */
+/* ===== App Root Container ===== */
 #root {
-  background-color: #f9fafb; /* light neutral */
-  /* Subtle grid + data point pattern */
-  background-image:
-    linear-gradient(to right, rgba(99, 102, 241, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(99, 102, 241, 0.06) 1px, transparent 1px),
-    radial-gradient(circle at 0 0, rgba(99, 102, 241, 0.12) 2px, transparent 3px);
-  background-size: 56px 56px, 56px 56px, 16px 16px;
-  background-position: 0 0, 0 0, 8px 8px;
-  background-attachment: fixed;
   min-height: 100vh;
+  background: transparent;
 }
 
