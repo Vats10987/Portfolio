@@ -1,5 +1,5 @@
 /* ===== PERFECT PORTFOLIO CSS ===== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
   margin: 0;
@@ -66,7 +66,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-primary);
@@ -145,7 +145,7 @@ body {
 }
 
 .logo-text {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   background: var(--gradient-primary);
@@ -280,7 +280,7 @@ body {
 }
 
 .hero-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 900;
   line-height: 1.1;
@@ -433,7 +433,7 @@ body {
   left: 0;
   right: 0;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-  color: var(--white);
+  color: var(--White);
   padding: 2rem 1rem 1rem;
   text-align: center;
   transform: translateY(100%);
@@ -475,10 +475,10 @@ body {
 .section-header {
   text-align: center;
   margin-bottom: 4rem;
-}
+} 
 
 .section-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 800;
   margin-bottom: 1rem;
@@ -1673,4 +1673,3 @@ body {
   min-height: 100vh;
   background: transparent;
 }
-

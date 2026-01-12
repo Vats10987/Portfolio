@@ -1,10 +1,21 @@
+// export default [
+//   "Team Leadership",
+//   "Problem Solving",
+//   "Critical Thinking",
+//   "Communication",
+//   "Time Management",
+//   "Adaptability",
+//   "Innovation",
+//   "Strategic Planning"
+// ];
+
 export default [
-  "Team Leadership",
-  "Problem Solving",
-  "Critical Thinking",
-  "Communication",
+  "Analytical Thinking",
+  "Problem Analysis",
+  "Learning Agility",
+  "Cross-functional Collaboration",
+  "Data Storytelling",
+  "Stakeholder Communication",
+  "Teamwork",
   "Time Management",
-  "Adaptability",
-  "Innovation",
-  "Strategic Planning"
 ];
